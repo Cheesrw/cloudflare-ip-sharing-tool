@@ -367,7 +367,6 @@ Name-Real: ip-changer-secure
 Name-Email: noreply@local
 Expire-Date: 0
 Passphrase: $password
-%no-protection
 %commit
 %echo Key generation complete
 EOF
@@ -376,7 +375,10 @@ EOF
         print_info "If this seems to hang, try generating some entropy by:"
         print_info "  - Moving the mouse cursor"
         print_info "  - Typing random characters"
-        print_info "  - Running: sudo apt-get install haveged && sudo systemctl start haveged"
+        print_info "  - Running entropy commands for your distribution:"
+        print_info "    Debian/Ubuntu: sudo apt-get install haveged && sudo systemctl start haveged"
+        print_info "    Alpine: sudo apk add haveged && sudo rc-service haveged start"
+        print_info "    RHEL/CentOS: sudo yum install rng-tools && sudo systemctl start rngd"
         
         # Set GPG to use a temporary home directory to avoid conflicts
         local temp_gpg_home
@@ -398,8 +400,10 @@ EOF
                 return 1
             fi
             
-            # Export private key
-            if gpg --armor --export-secret-keys "ip-changer-secure" > "$PRIVATE_KEY_PATH" 2>/dev/null; then
+            # Export private key (with passphrase protection)
+            # Try with pinentry-mode first, fall back to basic export
+            if gpg --armor --export-secret-keys --pinentry-mode loopback --passphrase "$password" "ip-changer-secure" > "$PRIVATE_KEY_PATH" 2>/dev/null || \
+               gpg --armor --export-secret-keys --batch --passphrase "$password" "ip-changer-secure" > "$PRIVATE_KEY_PATH" 2>/dev/null; then
                 print_success "Private key exported"
             else
                 print_error "Failed to export private key"
@@ -422,14 +426,23 @@ EOF
             if echo "$gpg_output" | grep -qi "not enough random bytes"; then
                 print_error "Insufficient entropy for key generation"
                 print_info "Solutions:"
-                print_info "1. Install entropy daemon: sudo apt-get install haveged && sudo systemctl start haveged"
-                print_info "2. Install rng-tools: sudo apt-get install rng-tools"
+                print_info "1. Install entropy daemon:"
+                print_info "   Debian/Ubuntu: sudo apt-get install haveged && sudo systemctl start haveged"
+                print_info "   Alpine: sudo apk add haveged && sudo rc-service haveged start"
+                print_info "   RHEL/CentOS: sudo yum install rng-tools && sudo systemctl start rngd"
+                print_info "2. Install rng-tools:"
+                print_info "   Debian/Ubuntu: sudo apt-get install rng-tools"
+                print_info "   Alpine: sudo apk add rng-tools"
+                print_info "   RHEL/CentOS: sudo yum install rng-tools"
                 print_info "3. Generate activity: move mouse, type, or run 'find / -type f -exec cat {} \\; > /dev/null 2>&1 &'"
             elif echo "$gpg_output" | grep -qi "permission denied"; then
                 print_error "Permission denied - check file permissions and ownership"
             elif echo "$gpg_output" | grep -qi "no such file"; then
                 print_error "GPG binary not found or corrupted"
-                print_info "Install GPG: sudo apt-get install gnupg"
+                print_info "Install GPG:"
+                print_info "  Debian/Ubuntu: sudo apt-get install gnupg"
+                print_info "  Alpine: sudo apk add gnupg"
+                print_info "  RHEL/CentOS: sudo yum install gnupg2"
             else
                 print_error "Unknown GPG error occurred"
                 print_info "Try running with debug: export GNUPGHOME=\$(mktemp -d) && gpg --batch --generate-key /path/to/config"
@@ -645,7 +658,7 @@ main() {
                 
                 # Get existing record ID (if any)
                 local record_id
-                record_id=$(get_dns_record_id "$zone_id" "$record_name")
+                record_id=$(get_dns_record_id "$zone_id" "$record_name") || true
                 
                 # Update or create DNS record
                 if update_dns_record "$zone_id" "$record_id" "$record_name" "$base64_content"; then

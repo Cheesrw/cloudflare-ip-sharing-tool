@@ -263,9 +263,9 @@ test_gpg_keys() {
     
     # Validate key file sizes (basic security check)
     local private_key_size
-    private_key_size=$(stat -c%s "$PRIVATE_KEY_PATH" 2>/dev/null || echo "0")
+    private_key_size=$(stat -c%s "$PRIVATE_KEY_PATH" 2>/dev/null || wc -c < "$PRIVATE_KEY_PATH" 2>/dev/null || echo "0")
     local password_size
-    password_size=$(stat -c%s "$PASSWORD_PATH" 2>/dev/null || echo "0")
+    password_size=$(stat -c%s "$PASSWORD_PATH" 2>/dev/null || wc -c < "$PASSWORD_PATH" 2>/dev/null || echo "0")
     
     if [[ "$private_key_size" -lt 1000 ]]; then
         print_error "Private key file appears to be corrupted or too small"
