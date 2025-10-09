@@ -613,12 +613,10 @@ The scripts have been thoroughly tested on the following platforms:
 ### Linux
 - ✅ **Debian 12** - Fully tested and working
 - ✅ **Debian 13** - Fully tested and working  
-- ✅ **Alpine Linux 3.18** - Fully tested and working
-- ✅ **Alpine Linux 3.22** - Fully tested and working
 
 ### Expected Compatibility
 - 🔄 **Any Debian-based system** (Ubuntu, Linux Mint, etc.) - Should work without issues
-- 🔄 **Other Linux distributions** (RHEL, CentOS, Fedora, Arch, openSUSE) - Should work with proper package installation
+- 🔄 **Other Linux distributions** (RHEL, CentOS, Fedora, Arch, openSUSE, Alpine) - Should work with proper package installation
 - 🔄 **macOS** - Should work with Homebrew dependencies
 
 The cross-platform design ensures consistent functionality across different operating systems, with automatic dependency management and fallback mechanisms built into the scripts.
