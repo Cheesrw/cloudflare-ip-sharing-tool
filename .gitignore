@@ -1,0 +1,53 @@
+# IP Changer Scripts - Git Ignore File
+
+# Keys directory - Contains sensitive PGP keys and passwords
+keys/
+keys/*
+keys/**
+
+# Logs directory - Contains operation logs from quiet mode
+logs/
+logs/*
+logs/**
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Runtime files
+*.pid
+*.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS generated files
+ehthumbs.db
+ehthumbs_vista.db
+Icon?
