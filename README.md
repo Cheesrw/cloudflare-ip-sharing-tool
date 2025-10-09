@@ -601,6 +601,28 @@ bash -x ./get.sh -t "token" -d "domain" -s "subdomain"
 | **Performance** | .NET runtime overhead | Native tools, faster |
 | **Compatibility** | Windows, PowerShell Core | Any Unix-like system |
 
+## 🧪 Tested Platforms
+
+The scripts have been thoroughly tested on the following platforms:
+
+### Windows
+- ✅ **Windows 10 21H2** - Fully tested and working
+- ✅ **Windows 10 22H2** - Fully tested and working
+- 🔄 **Windows 11** - Expected to work (compatible with Windows 10)
+
+### Linux
+- ✅ **Debian 12** - Fully tested and working
+- ✅ **Debian 13** - Fully tested and working  
+- ✅ **Alpine Linux 3.18** - Fully tested and working
+- ✅ **Alpine Linux 3.22** - Fully tested and working
+
+### Expected Compatibility
+- 🔄 **Any Debian-based system** (Ubuntu, Linux Mint, etc.) - Should work without issues
+- 🔄 **Other Linux distributions** (RHEL, CentOS, Fedora, Arch, openSUSE) - Should work with proper package installation
+- 🔄 **macOS** - Should work with Homebrew dependencies
+
+The cross-platform design ensures consistent functionality across different operating systems, with automatic dependency management and fallback mechanisms built into the scripts.
+
 ## 🤝 Contributing
 
 When contributing to this project:
